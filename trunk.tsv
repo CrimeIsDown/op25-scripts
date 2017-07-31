@@ -1,0 +1,2 @@
+Sysname	Control Channel List	Offset	NAC	Modulation	TGID Tags File	Whitelist	Blacklist	Center Frequency
+STARCOM21	774.34375	0	0x141	CQPSK	/home/chicagoscanner/op25_scripts/sc21_tgs.tsv	/home/chicagoscanner/op25_scripts/sc21_bcd396xt.wlist	/home/chicagoscanner/op25_scripts/sc21_encrypted.blist	773.75
