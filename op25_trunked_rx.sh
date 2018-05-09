@@ -9,12 +9,9 @@ fi
 
 source .env
 
-TRUNKCONFIG=`readlink -f $BASEPATH/trunk.tsv`
+TRUNKCONFIG=`readlink -f $BASEPATH/trunk_starcom21.tsv`
 CONTROLFREQ=`grep $1 $TRUNKCONFIG | cut -f2 | sed 's/"//g'`"e6"
 
-$TERMINAL -e "$BASEPATH/$AUDIO_SCRIPT"
-
 cd $RXDIR
-./rx.py  --args $OP25_ARGS --gains $OP25_GAIN -f $CONTROLFREQ -q $OP25_PPM -S $OP25_SAMPLERATE -D $OP25_DEMOD -2 -o 12.5e3 -T $TRUNKCONFIG -w 2> $ERRORLOG
-kill $(pgrep "$AUDIO_SCRIPT")
+./rx.py  --args $OP25_ARGS --gains $OP25_GAIN -f $CONTROLFREQ -q $OP25_PPM -S $OP25_SAMPLERATE -D $OP25_DEMOD -2 -o 12.5e3 -T $TRUNKCONFIG -w -U -l http:127.0.0.1:8080 2> $ERRORLOG
 cat $ERRORLOG

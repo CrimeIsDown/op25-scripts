@@ -1,0 +1,2 @@
+Sysname	Control Channel List	Offset	NAC	Modulation	TGID Tags File	Whitelist	Blacklist	Center Frequency
+OEMC	853.800	0	0x872	CQPSK	/home/chicagoscanner/tools/op25-scripts/oemc_tgs.tsv			853.0
